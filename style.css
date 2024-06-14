@@ -1,0 +1,98 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg,#153677,#4e085f);
+    padding: 10px;
+}
+.todo-app{
+    width: 100%;
+    max-width: 540px;  /* max width jitne set kar di us se zada uske width nahi ho sakti hai*/
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    margin-bottom: 20px;
+}
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    flex: 1; /* it will take the full width*/
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+button{
+    border: none;
+    outline: none;
+    padding:16px 50px;
+    border-radius: 40px;
+    cursor: pointer;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none; /*The user-select CSS property controls whether the user can select text. This doesn't have any effect on content loaded as part of a browser's user interface */
+    position: relative; /*The element is positioned relative to its normal position */
+}
+ul li::before{ /*Insert some text before the content of each li element */
+    content: '';
+    position: absolute; /*An element with position: absolute; is positioned relative to the nearest positioned ancestor */
+    height: 28px;
+    width: 28px;
+    border-radius: 50px;
+    background-image: url(unchecked.png);
+    background-size: cover; /*Resize the background image to cover the entire container */
+    background-position: center; /*The background-position property sets the starting position of a background image. */
+    top: 12px;
+    left: 18px;
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(checked.png);
+}
+ul li span{
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background: #edeef0;
+}
+/* if we click on the particular task it will checked or unchecked and if we clicked on the x icon it should delete the particular task. */
